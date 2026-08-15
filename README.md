@@ -58,7 +58,7 @@ Default is 3000 ms.
 
 - Data is collected by a Quickshell `Process` running `docker ps`, `docker inspect` and `docker stats`.
 - The limit change uses `docker update --memory <MB>m --memory-swap -1 <container>`.
-- The user must be in the `docker` group so `sudo` is not needed.
+- The user must be a member of the `docker` group so no elevated permissions are required.
 
 ## Testing Model.js locally
 

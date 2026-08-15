@@ -314,7 +314,7 @@ Panel {
             visible: !root.dockerAvailable
             width: parent.width
             wrapMode: Text.WordWrap
-            text: "Could not reach the Docker daemon. Make sure it is running (systemctl status docker) and that your user is in the docker group."
+            text: "Could not reach the Docker daemon. Make sure it is running and that your user is in the docker group."
             color: Qt.darker(root.bar.foreground, 1.4)
             font.family: root.bar.fontFamily
             font.pixelSize: Style.font.body
