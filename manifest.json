@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "devgtv.docker",
-  "name": "Docker",
+  "name": "Omarchy Control Docker",
   "version": "1.0.0",
   "author": "devgtv",
   "license": "MIT",
-  "description": "Shows running Docker containers and lets you adjust the RAM limit of each one.",
+  "description": "Shows running Docker containers in the bar and lets you control the RAM limit of each one.",
   "kinds": [
     "bar-widget"
   ],
@@ -14,8 +14,8 @@
     "barWidget": "Panel.qml"
   },
   "barWidget": {
-    "displayName": "Docker",
-    "description": "Bar icon with a popup listing Docker containers (CPU/RAM) and a slider to set the RAM limit of each container.",
+    "displayName": "Omarchy Control Docker",
+    "description": "Bar icon that opens a popup with running Docker containers (status, CPU, RAM) and a slider to set the RAM limit of each container.",
     "category": "System",
     "defaultSection": "right",
     "allowMultiple": false

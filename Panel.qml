@@ -148,10 +148,6 @@ Panel {
       refresh()
       selectedIndex = 0
       cursorActive = false
-      Qt.callLater(function() {
-        var geo = panelColumn.mapToScene(0, 0)
-        console.log("DOCKER_PANEL_GEO " + geo.x + " " + geo.y + " " + panelColumn.width + " " + panelColumn.height)
-      })
     }
   }
 
@@ -468,7 +464,6 @@ Panel {
               // Do not steal slider clicks: HoverHandler only tracks the mouse and
               // updates the keyboard cursor without consuming the click.
               HoverHandler {
-                anchors.fill: parent
                 onHoveredChanged: if (hovered) {
                   root.cursorActive = true
                   root.selectedIndex = containerRow.index

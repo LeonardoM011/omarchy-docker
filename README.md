@@ -1,6 +1,16 @@
-# devgtv.docker
+# Omarchy Control Docker
 
-Bar widget for the Omarchy Shell (Quickshell) that shows running Docker containers and lets you adjust the RAM limit of each one.
+`devgtv.docker` — bar widget for the Omarchy Shell (Quickshell) that shows running Docker containers and lets you control the RAM limit of each one.
+
+![preview](preview.png)
+
+## What it does
+
+- Adds a Docker icon to the bar.
+- Click the icon to open a popup with the running containers and the host's memory usage.
+- For each container you can see its status, CPU and used memory.
+- A slider sets the RAM limit of the selected container (`docker update --memory ... --memory-swap -1`).
+- The popup auto-refreshes every 3 seconds.
 
 ## Installation
 
@@ -23,16 +33,13 @@ omarchy plugin remove devgtv.docker
 
 ## Usage
 
-- Docker icon in the bar.
-- Click to open the popup listing:
-  - container name and image
-  - status, CPU and used memory
-  - RAM limit slider (128 MiB steps, from 128 MiB up to the host's total RAM)
-- Keyboard (while the popup is focused):
+- Click the Docker icon in the bar to open the popup.
+- Click a container row to select it, or use the keyboard:
   - `j`/`k` move between containers
   - `h`/`l` adjust the RAM limit (300 ms debounce)
   - `r` force refresh
   - `Esc` close
+- The slider range goes from 128 MiB up to the host's total RAM in 128 MiB steps; the value is applied to the selected container.
 
 ## Configuration
 
