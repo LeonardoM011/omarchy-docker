@@ -12,6 +12,15 @@ omarchy plugin enable devgtv.docker right
 
 The bar hot-reloads on save. To summon the popup from the keyboard you can bind the `devgtv.docker` IPC target to a Hyprland key.
 
+## Removal
+
+Disable the widget and remove the plugin checkout:
+
+```bash
+omarchy plugin disable devgtv.docker
+omarchy plugin remove devgtv.docker
+```
+
 ## Usage
 
 - Docker icon in the bar.
