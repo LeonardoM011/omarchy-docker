@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "devgtv",
   "license": "MIT",
-  "description": "Mostra os containers Docker em execução e permite ajustar o limite de RAM de cada um.",
+  "description": "Shows running Docker containers and lets you adjust the RAM limit of each one.",
   "kinds": [
     "bar-widget"
   ],
@@ -15,7 +15,7 @@
   },
   "barWidget": {
     "displayName": "Docker",
-    "description": "Ícone na barra com popup listando containers Docker (CPU/RAM) e slider para definir o limite de RAM de cada container.",
+    "description": "Bar icon with a popup listing Docker containers (CPU/RAM) and a slider to set the RAM limit of each container.",
     "category": "System",
     "defaultSection": "right",
     "allowMultiple": false

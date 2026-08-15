@@ -68,7 +68,7 @@ Panel {
     if (!refreshProc.running) refreshProc.running = true
   }
 
-  // Aplica `docker update --memory <mb>m`. --memory-swap -1 acompanha para o
+  // Applies `docker update --memory <mb>m`. --memory-swap -1 follows along so the
   // daemon rejects limits larger than the currently configured swap.
   function setMemory(name, mb) {
     if (!name) return
@@ -288,10 +288,10 @@ Panel {
 
               Text {
                 text: {
-                  if (!root.dockerAvailable) return "DAEMON INDISPONÍVEL"
+                  if (!root.dockerAvailable) return "DAEMON UNAVAILABLE"
                   var n = root.containers.length
-                  if (n === 0) return "NENHUM CONTAINER EM EXECUÇÃO"
-                  return (n + (n === 1 ? " CONTAINER" : " CONTAINERS")).toUpperCase()
+                  if (n === 0) return "NO RUNNING CONTAINERS"
+                  return (n + (n === 1 ? " RUNNING CONTAINER" : " RUNNING CONTAINERS")).toUpperCase()
                 }
                 color: Qt.darker(root.bar.foreground, 1.4)
                 font.family: root.bar.fontFamily
@@ -314,7 +314,7 @@ Panel {
             visible: !root.dockerAvailable
             width: parent.width
             wrapMode: Text.WordWrap
-            text: "Não foi possível falar com o daemon Docker. Verifique se ele está rodando (systemctl status docker) e se seu usuário está no grupo docker."
+            text: "Could not reach the Docker daemon. Make sure it is running (systemctl status docker) and that your user is in the docker group."
             color: Qt.darker(root.bar.foreground, 1.4)
             font.family: root.bar.fontFamily
             font.pixelSize: Style.font.body
@@ -482,7 +482,7 @@ Panel {
           Text {
             visible: root.containers.length > 0
             width: parent.width
-            text: "j/k navega · h/l ajusta RAM · r atualiza"
+            text: "j/k navigate · h/l adjust RAM · r refresh"
             color: Qt.darker(root.bar.foreground, 1.6)
             font.family: root.bar.fontFamily
             font.pixelSize: Style.font.caption
