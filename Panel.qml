@@ -148,6 +148,10 @@ Panel {
       refresh()
       selectedIndex = 0
       cursorActive = false
+      Qt.callLater(function() {
+        var geo = panelColumn.mapToScene(0, 0)
+        console.log("DOCKER_PANEL_GEO " + geo.x + " " + geo.y + " " + panelColumn.width + " " + panelColumn.height)
+      })
     }
   }
 
@@ -411,7 +415,7 @@ Panel {
 
                   Text {
                     id: ramHeader
-                    text: "LIMITE DE RAM"
+                    text: "RAM LIMIT"
                     color: Qt.darker(root.bar.foreground, 1.4)
                     font.family: root.bar.fontFamily
                     font.pixelSize: Style.font.caption
@@ -428,7 +432,7 @@ Panel {
                       var shown = ramSlider.dragging ? ramSlider.liveValue : root.effectiveMb(c)
                       var label = Model.formatMb(shown)
                       if (root.containerLimitMb(c) === 0 && root.memOverrides[c.name] === undefined)
-                        label += " (sem limite)"
+                        label += " (unlimited)"
                       return label
                     }
                     color: Qt.darker(root.bar.foreground, 1.4)
